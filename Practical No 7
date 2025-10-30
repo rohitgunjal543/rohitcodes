@@ -1,0 +1,61 @@
+//1. Generic Servlet
+import java.io.IOException; 
+import java.io.PrintWriter; 
+import javax.servlet.ServletException; 
+import javax.servlet.ServletRequest; 
+import javax.servlet.ServletResponse; 
+import javax.servlet.http.HttpServlet; 
+import javax.servlet.http.HttpServletRequest; 
+import javax.servlet.http.HttpServletResponse; 
+ 
+/** 
+ * 
+ * @author DS 
+ */ 
+public class MyGenericServlet extends HttpServlet { 
+ 
+     @Override 
+     public void service(ServletRequest request, ServletResponse response) 
+            throws ServletException, IOException { 
+        response.setContentType("text/html"); 
+         try ( // Get a PrintWriter to write the response 
+                 PrintWriter out = response.getWriter()) { 
+             // Write HTML content to the response 
+             out.println("<html>"); 
+             out.println("<head><title>Generic Servlet Example</title></head>"); 
+             out.println("<body>"); 
+             out.println("<h2>Hello from MyGenericServlet!</h2>"); 
+             out.println("<p>This is a simple generic servlet.</p>"); 
+             out.println("</body>"); 
+             out.println("</html>"); 
+              
+         } 
+    } 
+
+//2.Source Code: Http Servlet 
+
+
+import javax.servlet.ServletException; 
+import javax.servlet.http.HttpServlet; 
+import javax.servlet.http.HttpServletRequest; 
+import javax.servlet.http.HttpServletResponse; 
+import java.io.IOException; 
+ 
+public class MyHttpServlet extends HttpServlet { 
+ 
+    @Override 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException { 
+        response.setContentType("text/html"); 
+        response.getWriter().println("<h1>Hello from HTTP Servlet (GET)!</h1>"); 
+    } 
+ 
+    @Override 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException { 
+        response.setContentType("text/html"); 
+        response.getWriter().println("<h1>Hello from HTTP Servlet (POST)!</h1>"); 
+        // Process form data, etc. 
+    } 
+} 
+} 
