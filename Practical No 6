@@ -1,0 +1,18 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Auto Background Color Change</title> 
+    <script type="text/javascript"> 
+        var colors = ["#FFB6C1", "#ADD8E6", "#90EE90", "#FFD700", "#FF7F50"]; 
+        var index = 0; 
+        function changeColor() { 
+            document.body.style.backgroundColor = colors[index]; 
+            index = (index + 1) % colors.length; 
+        } 
+        setInterval(changeColor, 5000); // Change every 5 seconds 
+</script> 
+</head> 
+<body> 
+<h2 style="text-align:center;">Background changes every 5 seconds</h2> 
+</body> 
+</html>
