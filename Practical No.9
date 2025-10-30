@@ -1,0 +1,19 @@
+package javaapplication1;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+public class JavaApplication1 {
+public static void main(String[] args) throws SQLException {
+Connection
+con=DriverManager.getConnection("jdbc:derby://localhost:1527/college","meet","meet");
+System.out.println("Connection created");
+java.sql.Statement stmt=con.createStatement();
+System.out.println("Statement created");
+stmt.executeUpdate("create table library(sname varchar(10),rollno int,gender varchar(10),class
+varchar(10),bookname varchar(10),authorname varchar(10),issuedate varchar(10),returndate
+varchar(10))");
+System.out.println("table created");
+stmt.executeUpdate("insert into library values('meet',1,'male','sy','java','gauri','2 feb','9 feb')");
+System.out.println("Record inserted");
+}
+}
