@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Email Validation</title> 
+  <script> 
+    function validateEmail() { 
+      let email = prompt("Please enter your email address:"); 
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+      while (true) { 
+        if (emailPattern.test(email)) { 
+          alert("Email is valid: " + email); 
+          break; 
+        } else { 
+          alert(" Invalid email! Please enter a valid format"); 
+          email = prompt("Re-enter your email address:"); 
+        } 
+      } 
+    } 
+  </script> 
+</head> 
+<body> 
+<h2>Email Validation Example</h2> 
+<button onclick="validateEmail()">Enter Email</button> 
+</body> 
+</html>
