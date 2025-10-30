@@ -1,0 +1,52 @@
+//1. Source Code: Inheritance
+
+
+class Vehicle { 
+    String brand; 
+ 
+    Vehicle(String brand) { 
+        this.brand = brand; 
+    } 
+ 
+    void showBrand() { 
+        System.out.println("Vehicle Brand: " + brand); 
+    } 
+} 
+class Car extends Vehicle { 
+    String model; 
+    Car(String brand, String model) { 
+        super(brand);  // Call constructor of superclass 
+        this.model = model; 
+    } 
+   void showModel() { 
+        System.out.println("Car Model: " + model); 
+    } 
+} 
+ public class InheritanceDemo { 
+    public static void main(String[] args) { 
+        Car myCar = new Car("Toyota", "Corolla"); 
+        myCar.showBrand(); 
+        myCar.showModel(); 
+    } 
+} 
+
+
+
+//2. Source Code: Exception Handling 
+
+
+public class ExceptionHandlingDemo { 
+    public static void main(String[] args) { 
+        try { 
+            int a = 10; 
+            int b = 0; 
+            int result = a / b;  // This will throw ArithmeticException 
+            System.out.println("Result: " + result); 
+        } catch (ArithmeticException e) { 
+            System.out.println("Exception caught: Division by zero is not allowed."); 
+        } finally { 
+            System.out.println("Finally block executed."); 
+        } 
+        System.out.println("Program continues after exception handling."); 
+    } 
+} 
