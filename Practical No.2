@@ -1,0 +1,41 @@
+//1.Constructor Overloading: 
+
+class Student { 
+Student() { 
+System.out.println("Default Constructor"); 
+} 
+Student(String name) { 
+System.out.println("Name: " + name); 
+} 
+Student(int age, String course) { 
+System.out.println("Age: " + age + ", Course: " + course); 
+} 
+public static void main(String[] args) { 
+Student s1 = new Student(); 
+Student s2 = new Student("Gauri"); 
+Student s3 = new Student(20, "Java"); 
+} 
+}
+
+
+// 2. Method Overloading: 
+
+
+class Calculator { 
+void add(int a, int b) { 
+System.out.println("Sum: " + (a + b)); 
+} 
+void add(double a, double b) { 
+System.out.println("Sum: " + (a + b)); 
+} 
+void add(String a, String b) { 
+System.out.println("Concatenation: " + (a + b)); 
+} 
+public static void main(String[] args) { 
+Calculator c = new Calculator(); 
+c.add(5, 10);           
+c.add(2.5, 3.5);        
+c.add("Hello", "Java"); // Calls String version 
+} 
+}
+
